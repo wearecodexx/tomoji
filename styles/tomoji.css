@@ -1,0 +1,92 @@
+.showTomoji{
+  display:inline-block;
+  background:#585094;
+  padding:2px 5px;
+  border-radius:2px;
+  cursor:pointer;
+}
+.showTomoji:hover{
+  background:#635aa6;
+}
+.addEmojis{
+  position:fixed;
+  width:35%;
+  top:200px;
+  right:10px;
+  border-radius:5px;
+  background:#f4f4f4;
+  border:#ccc 1px solid;
+  z-index: 100;
+  text-align: left;
+}
+.addEmojis h5{
+  padding:3px 10px;
+  background:#585094;
+  color:#fff;
+  position:relative;
+}
+.addEmojis h5 span{color:#ccc; font-size:12px; font-weight: normal;}
+.allEmojis{padding:10px; max-height:400px; overflow-y: scroll;}
+.allEmojis .tomoji{
+  background:#ededed;
+  padding:2px 3px;
+  border-radius:3px;
+  cursor:pointer;
+  margin:3px;
+  display:inline-block;
+  line-height:20px;
+}
+.allEmojis .tomoji2{
+  padding:2px 3px;
+  cursor:pointer;
+  margin:3px;
+  display:inline-block;
+  line-height:20px;
+}
+.allEmojis .tomoji:hover, .allEmojis .tomoji2:hover{
+  background:#fff;
+}
+h5 span.closeTomoji{
+  height:20px;
+  width:20px;
+  background:#555;
+  color:#fff;
+  line-height:20px;
+  text-align:center;
+  border-radius:50%;
+  display:inline-block;
+  font-size:11px;
+  cursor:pointer;
+  position:absolute;
+  top:4px;
+  right:4px;
+}
+.closeTomoji:hover{background:#222;}
+
+.selector{
+  padding:0 0 0 3px;
+
+}
+.selectBtn{
+  height:30px;
+  line-height: 30px;
+  cursor:pointer;
+  border-radius:4px 4px 0 0;
+  display:inline-block;
+  background:#ededed;
+  padding:0 3px;
+}
+.selectBtn:hover{
+  background:#f4f4f4;
+}
+.selectBtn.selected{background:#fff;}
+.selectBtn img{max-height:25px;}
+
+.emojiBox{display:none;}
+.emojiOpen{display:block;}
+
+.separator{
+  height:1px;
+  background:#ededed;
+  margin:5px 0;
+}
