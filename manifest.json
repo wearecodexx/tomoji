@@ -3,7 +3,7 @@
 
   "name": "Tomoji",
   "description": "With this extension you can easily add emojis and stickers to a textarea.",
-  "version": "1.0.0",
+  "version": "1.1.0",
 
   "icons": { "16": "img/icon_16.png",
            "48": "img/icon_48.png",
@@ -13,18 +13,20 @@
         "default_popup": "popup.html"
       }  ,
 
-      "permissions": ["<all_urls>"],
+"permissions": [
+        "storage",
+        "<all_urls>"
+    ],
       "web_accessible_resources": [
-        "http://wearecodex.com/tomoji/*/*",
-        "siroctopus/*",
+        "https://wearecodex.com/tomoji/*/*",
         "img/*"
       ],
-
-  "content_scripts": [
+"content_scripts": [
     {
       "matches": ["https://steemit.com/*"],
-      "js": ["js/jquery.min.js", "js/tomoji.js"],
-      "css":["styles/tomoji.css"],
+      "js": ["js/jquery.min.js", "js/tomoji.js", "js/popup.js"],
+      "css":["styles/tomoji.css", "styles/popup.css"],
+      "permissions": ["storage"],
       "run_at": "document_end"
     }
   ]

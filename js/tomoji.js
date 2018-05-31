@@ -1,23 +1,31 @@
   var extIcon = chrome.extension.getURL('img/icon_16.png');
 
-$('.PostFull__reply').append(
-  '<span class="showTomoji"><img src="'+ extIcon +'"></span>'
-);
+    $('.PostFull__reply').append(
+      '<span class="showTomoji"><img src="'+ extIcon +'"></span>'
+    );
 
- //$('span.PostFull__reply a').click(function() {
- $('.PostFull').on('click', '.showTomoji', function () {
-  $(this).css('color','#585094');
 
-  var octopusteem_01 = chrome.extension.getURL('siroctopus/octopusteem_01.png');
-  var octopusteem_02 = chrome.extension.getURL('siroctopus/octopusteem_02.png');
-  var octopusteem_04 = chrome.extension.getURL('siroctopus/octopusteem_04.png');
-  var octopusteem_05 = chrome.extension.getURL('siroctopus/octopusteem_05.png');
-  var octopusteem_06 = chrome.extension.getURL('siroctopus/octopusteem_06.png');
 
+
+$('.PostFull').on('click', '.showTomoji', function () {
+ $(this).css('color','#585094');
+    $('.addEmojis').removeClass('hideEmoji')
+});
 
   $('.RightShare__Menu').append(
-    '<div class="addEmojis"><h5><img src="'+ extIcon +'"> TOMOJI <span>add emojis to your comments</span><span class="closeTomoji">x</span></h5> <div class="allEmojis">' +
-    '<div class="selector"> <span class="selectBtn" name=".normalEmojis">😁</span> <span class="selectBtn" name=".ascii">(๑✧‿✧๑)</span> <span class="selectBtn selected" name=".sirOctopus "><img src="'+ octopusteem_01 +'"></span></div>'+
+    '<div class="addEmojis"><h5><img src="'+ extIcon +'"> Tomoji <span>add stickers to your comments</span><span class="customize">⚙</span><span class="closeTomoji">x</span></h5>' + 
+    
+      '<div class="allEmojis">' +
+    
+    /* stickers menu */
+    '<div class="selector">'+
+    '<span class="selectBtn selected ono" name=".ono" id="btnOno"><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_01.png"></span>'+
+    '<span class="selectBtn sirOctopus" name=".sirOctopus" id="btnSiroctopus"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_01.png"></span>'+
+    '<span class="selectBtn kittyface" name=".kittyface" id="btnkittyface"><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_01.png"></span>'+
+    '<span class="selectBtn normalEmojis" name=".normalEmojis" id="normalEmojis">😁</span>' +
+    '<span class="selectBtn ascii" name=".ascii" id="ascii">(๑✧‿✧๑)</span>' +
+    '</div>'+
+      
     '<div class="emojiBox normalEmojis">'+
     '<span class="tomoji" name=":grin:"">😁</span>' +
     '<span class="tomoji" name=":joy:">😂</span>' +
@@ -130,41 +138,75 @@ $('.PostFull__reply').append(
     '<span class="tomoji" name=": :">┬─┬ノ( º _ ºノ)</span>' +
     '</div><!--/ascii-->'+
 
-    '<div class="emojiBox sirOctopus emojiOpen">'+
-    '<span class="tomoji2" name=":siroctopus-cute:"  title="http://wearecodex.com/tomoji/siroctopus/octopusteem_01.png"><img src="'+ octopusteem_01 +'"></span>' +
-    '<span class="tomoji2" name=":siroctopus-cute:"  title="http://wearecodex.com/tomoji/siroctopus/octopusteem_02.png"><img src="'+ octopusteem_02 +'"></span>' +
-    '<span class="tomoji2" name=":siroctopus-cute:"  title="http://wearecodex.com/tomoji/siroctopus/octopusteem_04.png"><img src="'+ octopusteem_04 +'"></span>' +
-    '<span class="tomoji2" name=":siroctopus-cute:"  title="http://wearecodex.com/tomoji/siroctopus/octopusteem_05.png"><img src="'+ octopusteem_05 +'"></span>' +
-    '<span class="tomoji2" name=":siroctopus-cute:"  title="http://wearecodex.com/tomoji/siroctopus/octopusteem_06.png"><img src="'+ octopusteem_06 +'"></span>' +
+      
+    '<div class="emojiBox sirOctopus" id="boxSiroctopus">'+
+    '<span class="tomoji" name=":siroctopus-cute:"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_01.png"></span>' +
+    '<span class="tomoji" name=":siroctopus-cute:"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_02.png"></span>' +
+    '<span class="tomoji" name=":siroctopus-cute:"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_04.png"></span>' +
+    '<span class="tomoji" name=":siroctopus-cute:"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_05.png"></span>' +
+    '<span class="tomoji" name=":siroctopus-cute:"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_06.png"></span>' +
     '</div><!--/sirOctopus-->'+
-    '</div></div>'
+      
+    '<div class="emojiBox kittyface" id="boxkittyface">'+
+    '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_01.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_02.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_03.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_04.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_05.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_06.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_07.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_08.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_09.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_10.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_11.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_12.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_13.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_14.png"></span>' +
+      '<span class="tomoji" name=""><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_15.png"></span>' +
+      '</div><!--/kitty face-->'+
+      
+      '<div class="emojiBox ono emojiOpen" id="boxOno">'+
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_01.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_02.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_03.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_04.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_05.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_06.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_08.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_09.png"></span>' +
+      '<span class="tomoji" ><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_07.png"></span>' +
+
+      '</div><!--/ono-->'+
+    
+      '<div class="emojiBox customizeemojis">'+
+      '<p><strong>Select the stickers you want to see in the panel</strong></p>'+
+      
+      '<input type="checkbox" id="checkOno" name=".ono"><label for="checkOno"><img src="https://wearecodex.com/tomoji/ono/ono_by_fabiyamada_01.png"></label>'+
+      
+      '<input type="checkbox" id="checksiroctopus" name=".sirOctopus"><label for="checksiroctopus"><img src="https://wearecodex.com/tomoji/siroctopus/octopusteem_01.png"></label>'+
+      
+      '<input type="checkbox" id="checkkittyface" name=".kittyface"><label for="checkkittyface"><img src="https://wearecodex.com/tomoji/ksf/kitty-face_stickers_by_fabiyamada_01.png"></label>'+
+      
+      '<input type="checkbox" id="checknormal" name=".normalEmojis"><label for="checknormal">😁</label>'+
+      '<input type="checkbox" id="checkascii" name=".ascii"><label for="checkascii">(๑✧‿✧๑)</label>'+
+      
+      '<div class="clearfix"></div></div>'+
+      
+      
+      '</div>'
   );
 
-});
 
 
+// Close Tomoji panel
 $('.PostFull').on('click', '.closeTomoji', function () {
-    $('.addEmojis').remove()
+    $('.addEmojis').addClass('hideEmoji');
 });
 
 
-
-// https://tinypng.com/
-
-$('.PostFull').on('click', '.tomoji2', function () {
-    // Do something on an existent or future .dynamicElement
-
-//    var $txt = jQuery(".ReplyEditor__body textarea");
-    var $txt = $("textarea").focus();
-    var caretPos = $txt[0].selectionStart;
-    var textAreaTxt = $txt.val();
-    var thetomoji = $(this).attr('title');
-  //  var txtToAdd = "thetomoji";
-    $txt.val(textAreaTxt.substring(0, caretPos) + thetomoji + textAreaTxt.substring(caretPos) );
-});
 
 $('.PostFull').on('click', '.tomoji', function() {
-    // Do something on an existent or future .dynamicElement
+    // Add the sticker to the comment textarea
 
     var $txt = jQuery(".ReplyEditor__body textarea");
     var caretPos = $txt[0].selectionStart;
@@ -177,9 +219,70 @@ $('.PostFull').on('click', '.tomoji', function() {
 $('.PostFull').on('click', '.selectBtn', function () {
     // Do something on an existent or future .dynamicElement
     $('.selectBtn').removeClass('selected');
+    $('.customize').removeClass('selected');
     $(this).addClass('selected');
     var openEmoji = $(this).attr('name');
     $('.emojiBox').removeClass('emojiOpen');
     $(openEmoji).addClass('emojiOpen');
 
 });
+$('.PostFull').on('click', '.customize', function () {
+    // Do something on an existent or future .dynamicElement
+    $('.selectBtn').removeClass('selected');
+    $(this).addClass('selected');
+
+    $('.emojiBox').removeClass('emojiOpen');
+    $('.customizeemojis').addClass('emojiOpen');
+
+});
+
+
+
+/** SELECT WHICH STICKERS YOU WANT TO SEE IN THE PANEL **/
+
+ $(document).on('click', '.customizeemojis :checkbox', function () {
+     var showEmoji = $(this).attr('name');
+      if ($(this).attr('checked')) {
+        $(showEmoji).addClass('hideEmoji'); //checked
+          $(this).attr('checked', false);
+        }
+        else {
+             $(showEmoji).removeClass('hideEmoji'); //not checked
+             $(this).attr('checked', true);
+        }
+});
+
+
+/** SAVE the user preferences **/
+
+var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+var $checkboxes = $(".customizeemojis :checkbox");
+
+$checkboxes.on("change", function(){
+  $checkboxes.each(function(){
+    checkboxValues[this.id] = this.checked;
+  });
+  localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+});
+
+// On page load
+$.each(checkboxValues, function(key, value) {
+  $("#" + key).prop('checked', value);
+});
+
+   
+// Checks which checkbox is checked and shows the stickers
+
+$(document).ready(function() {
+  $('.customizeemojis :checkbox').each(function( i ) {     
+    var whathide= $(this).attr('name');
+        if ($(this).is(':checked')) {
+            $(whathide).removeClass('hideEmoji'); //not checked
+            $(this).attr('checked', true);
+        } else {
+            $(whathide).addClass('hideEmoji'); //checked
+            $(this).attr('checked', false);
+        }
+  });
+});
+

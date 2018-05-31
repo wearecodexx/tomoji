@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
+
+body.tomojipopup{
+    background:#f4f4f4;
+    font-family:'Roboto';
+    margin:0;
+    padding:0;
+}
+.tomojipopup * {
+    box-sizing: border-box;
+}
+.tomojipopup a{text-decoration:none; color:#816da7;}
+.tomojipopup a:hover{color:#5d4e87;}
+.tomojipopup .clearfix{clear:both; display: table;}
+.tomojipopup .container{
+    width:300px;
+    margin:5px;
+    padding:10px;
+}
+.tomojipopup h1{
+    margin:0;
+    padding:5px 10px;;
+    font-weight:100;
+    background:#816da7;
+    color:#fff;
+}
+
+.newstickers {
+    background:#ccc:
+}
+.newstickers img{max-height: 100px;}
